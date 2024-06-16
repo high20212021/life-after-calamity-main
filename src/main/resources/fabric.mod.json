@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "lifeaftercalamity",
+	"version": "${version}",
+	"name": "Life After Calamity(灾厄余生)",
+	"description": "灾厄核心已加载!",
+	"authors": [
+		"Yukari"
+	],
+	"contact": {
+		"homepage": "https://afdian.net/a/life-after-calamity",
+		"sources": "https://github.com/high20212021/life-after-calamity-main"
+	},
+	"license": "GPLv2",
+	"icon": "assets/lifeaftercalamity/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"moe.yukari.lifeaftercalamity.LifeAfterCalamity"
+		]
+	},
+	"mixins": [
+		"lifeaftercalamity.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.16.5",
+		"java": ">=8",
+		"fabric": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
