@@ -21,6 +21,7 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '17.0.10+7'
+        java-version: '11'
 
     - name: Build Mod
       run: |
