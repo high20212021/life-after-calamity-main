@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "XLX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:diamond"
+    },
+    "L": {
+      "item": "lifeaftercalamity:ender_power_battery
+    }
+  },
+  "result": {
+    "item": "minecraft:diamond_chestplate"
+  }
+}
