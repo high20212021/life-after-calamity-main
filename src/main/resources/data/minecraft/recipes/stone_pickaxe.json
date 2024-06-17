@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "Y",
+      "N"
+    ],
+    "key": {
+      "Y": {
+        "item": "lifeaftercalamity:stone_pickaxe_head"
+      },
+      "N": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "minecraft:stone_pickaxe"
+    }
+  }
