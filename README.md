@@ -4,7 +4,7 @@
 目前在初始开发阶段，为World of Pain Mod的精神续作  
 ~~Mojang你这傻逼优化，1.20.1卡的不行~~  
   
-[爱发电主页](https://afdian.net/a/life-after-calamity)  
+[爱发电主页](https://afdian.net/a/life-after-calamity) [Telegram](https://t.me/asdevcommunity)  
 ## 重大贡献者列表
 目前就我自己(Yukari2024)  
 ## 构建说明
