@@ -8,6 +8,9 @@
     "key": {
       "#": {
         "item": "lifeaftercalamity:ender_core"
+      },
+      "X": {
+        "item": "minecraft:obsidian"
       }
     },
     "result": {
