@@ -2,7 +2,9 @@ package moe.yukari.lifeaftercalamity;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -19,10 +21,10 @@ public class LifeAfterCalamity implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger("lifeaftercalamity");
 
 	//注册物品 Register Items
-	public static final Item CALAMITY_CORE = new Item(Item.Settings());  //灾厄核心
-	public static final Item STONE_PICKAXE_HEAD = new Item(Item.Settings());  //石镐头
-	public static final Item ENDER_CORE = new Item(Item.Settings());  //末影核心
-	public static final Item ENDER_POWER_BATTERY = new Item(Item.Settings());  //末影能量电池
+	public static final Item CALAMITY_CORE = new Item(new FabricItemSettings());  //灾厄核心
+	public static final Item STONE_PICKAXE_HEAD = new Item(new FabricItemSettings());  //石镐头
+	public static final Item ENDER_CORE = new Item(new FabricItemSettings());  //末影核心
+	public static final Item ENDER_POWER_BATTERY = new Item(new FabricItemSettings());  //末影能量电池
 	public static final CalamityPickaxe CALAMITY_PICKAXE= new CalamityPickaxe(new CalamityItemMaterial(), 3, -0.8f, new Item.Settings());  //灾厄之镐
 
 	@Override
