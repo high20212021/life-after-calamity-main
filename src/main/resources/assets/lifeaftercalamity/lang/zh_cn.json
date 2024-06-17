@@ -4,5 +4,8 @@
     "item.lifeaftercalamity.calamity_pickaxe": "灾厄之镐",
     "item.lifeaftercalamity.stone_pickaxe_head": "石镐头",
     "item.lifeaftercalamity.ender_core": "末影核心",
-    "item.lifeaftercalamity.ender_power_battery": "末影能量电池"
+    "item.lifeaftercalamity.ender_power_battery": "末影能量电池",
+    "item.lifeaftercalamity.developer_cert_yukari": "开发者勋章(Yukari)",
+    "item.lifeaftercalamity.developer_cert_mibino": "开发者勋章(Mibino)",
+    "item.lifeaftercalamity.developer_cert_minqwq": "开发者勋章(minqwq)"
 }

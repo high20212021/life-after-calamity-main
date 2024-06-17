@@ -4,5 +4,8 @@
     "item.lifeaftercalamity.calamity_pickaxe": "Calamity Pickaxe",
     "item.lifeaftercalamity.stone_pickaxe_head": "Stone Pickaxe Head",
     "item.lifeaftercalamity.ender_core": "Ender Core",
-    "item.lifeaftercalamity.ender_power_battery": "Ender Power Battery"
+    "item.lifeaftercalamity.ender_power_battery": "Ender Power Battery",
+    "item.lifeaftercalamity.developer_cert_yukari": "Developer(Yukari)",
+    "item.lifeaftercalamity.developer_cert_mibino": "Developer(Mibino)",
+    "item.lifeaftercalamity.developer_cert_minqwq": "Developer(minqwq)"
 }

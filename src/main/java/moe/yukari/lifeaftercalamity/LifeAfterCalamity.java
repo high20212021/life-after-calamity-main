@@ -20,6 +20,14 @@ public class LifeAfterCalamity implements ModInitializer {
 
     public static final Logger LOGGER = LogManager.getLogger("lifeaftercalamity");
 
+	//开发者勋章
+	//Yukari
+	public static final Item DEVELOPER_CERT_YUKARI = new Item(new FabricItemSettings());
+	//Mibino
+    public static final Item DEVELOPER_CERT_MIBINO = new Item(new FabricItemSettings());
+	//minqwq
+	public static final Item DEVELOPER_CERT_MINQWQ = new Item(new FabricItemSettings());
+
 	//注册物品 Register Items
 	public static final Item CALAMITY_CORE = new Item(new FabricItemSettings());  //灾厄核心
 	public static final Item STONE_PICKAXE_HEAD = new Item(new FabricItemSettings());  //石镐头
@@ -39,6 +47,11 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "ender_power_battery"), ENDER_POWER_BATTERY);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "calamity_pickaxe"), CALAMITY_PICKAXE);
 
+		//开发者勋章
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_yukari"), DEVELOPER_CERT_YUKARI);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_mibino"), DEVELOPER_CERT_MIBINO);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_minqwq"), DEVELOPER_CERT_MINQWQ);
+
 	}
 
 	public static final ItemGroup CALAMITY_GROUP = FabricItemGroupBuilder.create(
@@ -50,6 +63,9 @@ public class LifeAfterCalamity implements ModInitializer {
 			stacks.add(new ItemStack(LifeAfterCalamity.STONE_PICKAXE_HEAD));
 			stacks.add(new ItemStack(LifeAfterCalamity.ENDER_CORE));
 			stacks.add(new ItemStack(LifeAfterCalamity.ENDER_POWER_BATTERY));
+			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_YUKARI));
+			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_MIBINO));
+			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_MINQWQ));
 		})
 		.build();
 	
