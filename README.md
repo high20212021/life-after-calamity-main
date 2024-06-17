@@ -15,6 +15,6 @@
 ```
 或在Windows环境下，执行
 ```
-./gradlew.bat build
+gradlew.bat build
 ```
 
