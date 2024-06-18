@@ -4,7 +4,6 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -27,6 +26,8 @@ public class LifeAfterCalamity implements ModInitializer {
     public static final Item DEVELOPER_CERT_MIBINO = new Item(new FabricItemSettings());
 	//minqwq
 	public static final Item DEVELOPER_CERT_MINQWQ = new Item(new FabricItemSettings());
+	//Xy_Lose
+	public static final Item DEVELOPER_CERT_XYLOSE = new Item(new FabricItemSettings());
 
 	//注册物品 Register Items
 	public static final Item CALAMITY_CORE = new Item(new FabricItemSettings());  //灾厄核心
@@ -61,6 +62,7 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_yukari"), DEVELOPER_CERT_YUKARI);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_mibino"), DEVELOPER_CERT_MIBINO);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_minqwq"), DEVELOPER_CERT_MINQWQ);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_xylose"), DEVELOPER_CERT_XYLOSE);
 
 	}
 
@@ -80,6 +82,7 @@ public class LifeAfterCalamity implements ModInitializer {
 			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_YUKARI));
 			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_MIBINO));
 			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_MINQWQ));
+			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_XYLOSE));
 		})
 		.build();
 	
