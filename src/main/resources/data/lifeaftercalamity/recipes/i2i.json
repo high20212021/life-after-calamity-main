@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "##",
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "lifeaftercalamity:iron_fragment"
+      }
+    },
+    "result": {
+      "item": "lifeaftercalamity:iron_coarse"
+    }
+  }
