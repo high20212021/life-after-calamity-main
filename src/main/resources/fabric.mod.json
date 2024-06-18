@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "lifeaftercalamity",
-	"version": "1.1.0-pre",
+	"version": "${version}",
 	"name": "Life After Calamity(灾厄余生)",
 	"description": "灾厄核心已加载!",
 	"authors": [

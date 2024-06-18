@@ -33,7 +33,13 @@ public class LifeAfterCalamity implements ModInitializer {
 	public static final Item STONE_PICKAXE_HEAD = new Item(new FabricItemSettings());  //石镐头
 	public static final Item ENDER_CORE = new Item(new FabricItemSettings());  //末影核心
 	public static final Item ENDER_POWER_BATTERY = new Item(new FabricItemSettings());  //末影能量电池
-	public static final CalamityPickaxe CALAMITY_PICKAXE= new CalamityPickaxe(new CalamityItemMaterial(), 3, -0.8f, new Item.Settings());  //灾厄之镐
+	public static final CalamityPickaxe CALAMITY_PICKAXE = new CalamityPickaxe(new CalamityItemMaterial(), 3, -0.8f, new Item.Settings());  //灾厄之镐
+	public static final Item ANCIENT_INGOT = new Item(new FabricItemSettings());  //远古合金
+	public static final Item FLAMARINE_FORGING_RECIPE = new Item(new FabricItemSettings());   //烈焰锻造材料
+
+	//碎片系列物品
+    public static final Item COBBLESTONE_FRAGMENT = new Item(new FabricItemSettings());  //圆石碎片
+	public static final Item DIAMOND_FRAGMENT = new Item(new FabricItemSettings());  //钻石碎片
 
 	@Override
 	public void onInitialize() {
@@ -46,6 +52,10 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "ender_core"), ENDER_CORE);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "ender_power_battery"), ENDER_POWER_BATTERY);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "calamity_pickaxe"), CALAMITY_PICKAXE);
+	    Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "ancient_ingot"), ANCIENT_INGOT);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "flamarine_forging_recipe"), FLAMARINE_FORGING_RECIPE);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "cobblestone_fragment"), COBBLESTONE_FRAGMENT);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "diamond_fragment"), DIAMOND_FRAGMENT);
 
 		//开发者勋章
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_yukari"), DEVELOPER_CERT_YUKARI);
@@ -63,6 +73,10 @@ public class LifeAfterCalamity implements ModInitializer {
 			stacks.add(new ItemStack(LifeAfterCalamity.STONE_PICKAXE_HEAD));
 			stacks.add(new ItemStack(LifeAfterCalamity.ENDER_CORE));
 			stacks.add(new ItemStack(LifeAfterCalamity.ENDER_POWER_BATTERY));
+			stacks.add(new ItemStack(LifeAfterCalamity.ANCIENT_INGOT));
+			stacks.add(new ItemStack(LifeAfterCalamity.FLAMARINE_FORGING_RECIPE));
+			stacks.add(new ItemStack(LifeAfterCalamity.COBBLESTONE_FRAGMENT));
+			stacks.add(new ItemStack(LifeAfterCalamity.DIAMOND_FRAGMENT));
 			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_YUKARI));
 			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_MIBINO));
 			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_MINQWQ));
