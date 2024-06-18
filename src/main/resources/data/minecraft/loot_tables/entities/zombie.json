@@ -32,7 +32,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "lifeaftercalamity:calamity_core"
+          "name": "minecraft:iron_nugget"
         },
         {
           "type": "minecraft:item",
@@ -40,7 +40,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "lifeaftercalamity:calamity_core"
+          "name": "minecraft:carrot"
         }
       ],
       "conditions": [
