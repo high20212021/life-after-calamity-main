@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "##",
+      "##"
+    ],
+    "key": {
+      "#": {
+        "item": "lifeaftercalamity:cobblestone_fragment"
+      }
+    },
+    "result": {
+      "item": "minecraft:cobblestone"
+    }
+  }

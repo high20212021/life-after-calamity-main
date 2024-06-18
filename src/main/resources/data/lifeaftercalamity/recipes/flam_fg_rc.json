@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "lifeaftercalamity:calamity_core"
+      },
+      "X": {
+        "item": "minecraft:blaze_rod"
+      }
+    },
+    "result": {
+      "item": "lifeaftercalamity:flamarine_forging_recipe"
+    }
+  }
