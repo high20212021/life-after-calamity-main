@@ -2,12 +2,23 @@ package moe.yukari.lifeaftercalamity;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.entity.player.PlayerEntity;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -44,6 +55,9 @@ public class LifeAfterCalamity implements ModInitializer {
 	public static final Item DIAMOND_FRAGMENT = new Item(new FabricItemSettings());  //钻石碎片
 	public static final Item IRON_FRAGMENT = new Item(new FabricItemSettings());  //铁矿碎片
 
+	//当然是方块啦
+	public static final Block ANCIENT_ORE = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool());
+
 	@Override
 	public void onInitialize() {
 
@@ -68,8 +82,12 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_minqwq"), DEVELOPER_CERT_MINQWQ);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_xylose"), DEVELOPER_CERT_XYLOSE);
 
+		//当然是方块啦
+		Registry.register(Registry.BLOCK, new Identifier("lifeaftercalamity", "ancient_ore"), ANCIENT_ORE);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "ancient_ore"), new BlockItem(ANCIENT_ORE, new FabricItemSettings()));
 	}
 
+    //普通方块物品组
 	public static final ItemGroup CALAMITY_GROUP = FabricItemGroupBuilder.create(
 		new Identifier("lifeaftercalamity", "calamity"))
 		.icon(() -> new ItemStack(LifeAfterCalamity.CALAMITY_CORE))
@@ -85,11 +103,20 @@ public class LifeAfterCalamity implements ModInitializer {
 			stacks.add(new ItemStack(LifeAfterCalamity.DIAMOND_FRAGMENT));
 			stacks.add(new ItemStack(LifeAfterCalamity.IRON_COARSE));
 			stacks.add(new ItemStack(LifeAfterCalamity.IRON_FRAGMENT));
-			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_YUKARI));
+			stacks.add(new ItemStack(LifeAfterCalamity.ANCIENT_ORE));
+		})
+	.build();
+
+	//开发者勋章物品组
+	public static final ItemGroup DEVELOPERS_CALAMITY_GROUP = FabricItemGroupBuilder.create(
+		new Identifier("lifeaftercalamity", "developers_calamity"))
+	    .icon(() -> new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_YUKARI))
+		.appendItems(stacks -> {
+            stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_YUKARI));
 			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_MIBINO));
 			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_MINQWQ));
 			stacks.add(new ItemStack(LifeAfterCalamity.DEVELOPER_CERT_XYLOSE));
 		})
-		.build();
-	
+	.build();
+
 }
