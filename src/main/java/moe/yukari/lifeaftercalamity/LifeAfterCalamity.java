@@ -18,6 +18,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.CountConfig;
 import net.minecraft.world.gen.GenerationStep;
@@ -105,8 +106,14 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "ancient_ore"), new BlockItem(ANCIENT_ORE, new FabricItemSettings()));
 
 		//Ores!
+		//下面的代码我也不确定要不要用，反正用了就报错，干脆注释一笔走人
+		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("lifeaftercalamity", "ancient_ore_overworld"), ORE_ANCIENT_ORE);
+		//RegistryKey<ConfiguredFeature<?,?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
+		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, "ancient_ore_overworld");
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("lifeaftercalamity", "ancient_ore_overworld"), ORE_ANCIENT_ORE);
-		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, "ancient_ore_overworld");
+		RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
+		
 	}
 
     //普通方块物品组
