@@ -1,8 +1,13 @@
 package moe.yukari.lifeaftercalamity;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModification;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
+import net.fabricmc.fabric.api.event.server.ServerTickCallback;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.item.BlockItem;
@@ -11,12 +16,17 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.CountConfig;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.entity.player.PlayerEntity;
 
@@ -29,6 +39,14 @@ import moe.yukari.lifeaftercalamity.tools.CalamityPickaxe;
 public class LifeAfterCalamity implements ModInitializer {
 
     public static final Logger LOGGER = LogManager.getLogger("lifeaftercalamity");
+
+	//你的挖掘疲劳小可爱又又又上线了(｡>∀<｡)
+	//TODO: server event tick effect QwQ
+
+	//Ores
+    public static ConfiguredFeature<?, ?> ORE_ANCIENT_ORE = Feature.ORE
+	    .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, LifeAfterCalamity.ANCIENT_ORE.getDefaultState(), 2))
+		.decorate(Decorator.COUNT.configure(new CountConfig(6)));
 
 	//开发者勋章
 	//Yukari
@@ -85,6 +103,10 @@ public class LifeAfterCalamity implements ModInitializer {
 		//当然是方块啦
 		Registry.register(Registry.BLOCK, new Identifier("lifeaftercalamity", "ancient_ore"), ANCIENT_ORE);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "ancient_ore"), new BlockItem(ANCIENT_ORE, new FabricItemSettings()));
+
+		//Ores!
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("lifeaftercalamity", "ancient_ore_overworld"), ORE_ANCIENT_ORE);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, "ancient_ore_overworld");
 	}
 
     //普通方块物品组
