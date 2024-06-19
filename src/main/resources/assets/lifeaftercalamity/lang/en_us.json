@@ -1,5 +1,6 @@
 {
     "itemGroup.lifeaftercalamity.calamity": "Life After Calamity Mod",
+    "itemGroup.lifeaftercalamity.developers_calamity": "Life After Calamity Mod Developers",
     "item.lifeaftercalamity.calamity_core": "Calamity Core",
     "item.lifeaftercalamity.calamity_pickaxe": "Calamity Pickaxe",
     "item.lifeaftercalamity.stone_pickaxe_head": "Stone Pickaxe Head",
@@ -14,5 +15,6 @@
     "item.lifeaftercalamity.developer_cert_yukari": "Developer(Yukari)",
     "item.lifeaftercalamity.developer_cert_mibino": "Developer(Mibino)",
     "item.lifeaftercalamity.developer_cert_minqwq": "Developer(minqwq)",
-    "item.lifeaftercalamity.developer_cert_xylose": "Developer(Xy_Lose)"
+    "item.lifeaftercalamity.developer_cert_xylose": "Developer(Xy_Lose)",
+    "block.lifeaftercalamity.ancient_ore": "Ancient Ore"
 }
