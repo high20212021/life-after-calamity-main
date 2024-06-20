@@ -124,11 +124,10 @@ public class LifeAfterCalamity implements ModInitializer {
 		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("lifeaftercalamity", "ancient_ore_overworld"), ORE_ANCIENT_ORE);
 		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
 		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
-		//第 三 世 代
-		//仍然会导致崩溃，Fabric你没完没了了是吧
-		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
-		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ancientOreOverworldKey.getValue(), ORE_ANCIENT_ORE);
-		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
+		//我改死你
+		RegistryKey<ConfiguredFeature<?, ?>> oreAncientOW = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAncientOW.getValue(), ORE_ANCIENT_OVERWORLD);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreAncientOW);
 		
 	}
 
