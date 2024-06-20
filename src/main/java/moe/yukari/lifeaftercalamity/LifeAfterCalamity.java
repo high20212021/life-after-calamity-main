@@ -42,9 +42,10 @@ public class LifeAfterCalamity implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger("lifeaftercalamity");
 
 	//Ores
-    public static ConfiguredFeature<?, ?> ORE_ANCIENT_ORE = Feature.ORE
-	    .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, LifeAfterCalamity.ANCIENT_ORE.getDefaultState(), 2))
-		.decorate(Decorator.COUNT.configure(new CountConfig(6)));
+	//我默认Fabric 1.16.5没有矿物生成了
+    //public static ConfiguredFeature<?, ?> ORE_ANCIENT_ORE = Feature.ORE
+	//    .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, LifeAfterCalamity.ANCIENT_ORE.getDefaultState(), 2))
+	//	.decorate(Decorator.COUNT.configure(new CountConfig(6)));
 
 	//开发者勋章
 	//Yukari
@@ -112,9 +113,10 @@ public class LifeAfterCalamity implements ModInitializer {
 		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
 		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
 		//第 三 世 代
-		RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ancientOreOverworldKey.getValue(), ORE_ANCIENT_ORE);
-		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
+		//仍然会导致崩溃，Fabric你没完没了了是吧
+		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
+		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ancientOreOverworldKey.getValue(), ORE_ANCIENT_ORE);
+		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
 		
 	}
 
