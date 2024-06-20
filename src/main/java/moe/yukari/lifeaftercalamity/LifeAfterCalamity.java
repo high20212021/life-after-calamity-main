@@ -42,6 +42,12 @@ public class LifeAfterCalamity implements ModInitializer {
 
     public static final Logger LOGGER = LogManager.getLogger("lifeaftercalamity");
 
+	//Ores
+	//我默认Fabric 1.16.5没有矿物生成了
+    //public static ConfiguredFeature<?, ?> ORE_ANCIENT_ORE = Feature.ORE
+	//    .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, LifeAfterCalamity.ANCIENT_ORE.getDefaultState(), 2))
+	//	.decorate(Decorator.COUNT.configure(new CountConfig(6)));
+
 	//开发者勋章
 	//Yukari
 	public static final Item DEVELOPER_CERT_YUKARI = new Item(new FabricItemSettings());
@@ -119,13 +125,10 @@ public class LifeAfterCalamity implements ModInitializer {
 		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
 		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
 		//第 三 世 代
+		//仍然会导致崩溃，Fabric你没完没了了是吧
 		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
 		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ancientOreOverworldKey.getValue(), ORE_ANCIENT_ORE);
 		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
-		//我就不信了，今天我就和Fabric杠上了
-		RegistryKey<ConfiguredFeature<?, ?>> oreAncientOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_worldgen"));
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAncientOverworld.getValue(), ORE_ANCIENT_OVERWORLD);
-	    BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreAncientOverworld);
 		
 	}
 
