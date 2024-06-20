@@ -20,6 +20,7 @@ import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.CountConfig;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.Decorator;
@@ -40,11 +41,6 @@ import moe.yukari.lifeaftercalamity.tools.CalamityPickaxe;
 public class LifeAfterCalamity implements ModInitializer {
 
     public static final Logger LOGGER = LogManager.getLogger("lifeaftercalamity");
-
-	//Ores
-    public static ConfiguredFeature<?, ?> ORE_ANCIENT_ORE = Feature.ORE
-	    .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, LifeAfterCalamity.ANCIENT_ORE.getDefaultState(), 2))
-		.decorate(Decorator.COUNT.configure(new CountConfig(6)));
 
 	//开发者勋章
 	//Yukari
@@ -73,6 +69,17 @@ public class LifeAfterCalamity implements ModInitializer {
 
 	//当然是方块啦
 	public static final Block ANCIENT_ORE = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool());
+
+	//首先我要揍死fabric wiki
+	private static ConfiguredFeature<?, ?> ORE_ANCIENT_OVERWORLD = Feature.ORE
+	    .configure(new OreFeatureConfig(
+			OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+			LifeAfterCalamity.ANCIENT_ORE.getDefaultState(),
+		3))
+		.rangeOf(40)
+		.spreadHorizontally()
+		.repeat(15);
+	
 
 	@Override
 	public void onInitialize() {
@@ -112,9 +119,13 @@ public class LifeAfterCalamity implements ModInitializer {
 		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
 		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
 		//第 三 世 代
-		RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ancientOreOverworldKey.getValue(), ORE_ANCIENT_ORE);
-		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
+		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
+		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ancientOreOverworldKey.getValue(), ORE_ANCIENT_ORE);
+		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
+		//我就不信了，今天我就和Fabric杠上了
+		RegistryKey<ConfiguredFeature<?, ?>> oreAncientOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_worldgen"));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAncientOverworld.getValue(), ORE_ANCIENT_OVERWORLD);
+	    BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreAncientOverworld);
 		
 	}
 
