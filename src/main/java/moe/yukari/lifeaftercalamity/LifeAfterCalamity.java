@@ -41,9 +41,6 @@ public class LifeAfterCalamity implements ModInitializer {
 
     public static final Logger LOGGER = LogManager.getLogger("lifeaftercalamity");
 
-	//你的挖掘疲劳小可爱又又又上线了(｡>∀<｡)
-	//TODO: server event tick effect QwQ
-
 	//Ores
     public static ConfiguredFeature<?, ?> ORE_ANCIENT_ORE = Feature.ORE
 	    .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, LifeAfterCalamity.ANCIENT_ORE.getDefaultState(), 2))
@@ -110,8 +107,13 @@ public class LifeAfterCalamity implements ModInitializer {
 		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("lifeaftercalamity", "ancient_ore_overworld"), ORE_ANCIENT_ORE);
 		//RegistryKey<ConfiguredFeature<?,?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
 		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, "ancient_ore_overworld");
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("lifeaftercalamity", "ancient_ore_overworld"), ORE_ANCIENT_ORE);
+		//下面代码会直接导致崩溃
+		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("lifeaftercalamity", "ancient_ore_overworld"), ORE_ANCIENT_ORE);
+		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
+		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
+		//第 三 世 代
 		RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ancientOreOverworldKey.getValue(), ORE_ANCIENT_ORE);
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
 		
 	}
