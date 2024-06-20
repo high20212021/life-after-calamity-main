@@ -16,5 +16,8 @@
     "item.lifeaftercalamity.developer_cert_mibino": "Developer(Mibino)",
     "item.lifeaftercalamity.developer_cert_minqwq": "Developer(minqwq)",
     "item.lifeaftercalamity.developer_cert_xylose": "Developer(Xy_Lose)",
-    "block.lifeaftercalamity.ancient_ore": "Ancient Ore"
+    "block.lifeaftercalamity.ancient_ore": "Ancient Ore",
+    "block.lifeaftercalamity.sulphur_ore": "Sulphur Ore",
+    "item.lifeaftercalamity.sulphur": "Sulphur Dust",
+    "item.lifeaftercalamity.madidied": "madi你妈死了"
 }

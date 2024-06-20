@@ -16,5 +16,8 @@
     "item.lifeaftercalamity.developer_cert_mibino": "开发者勋章(Mibino)",
     "item.lifeaftercalamity.developer_cert_minqwq": "开发者勋章(minqwq)",
     "item.lifeaftercalamity.developer_cert_xylose": "开发者勋章(Xy_Lose)",
-    "block.lifeaftercalamity.ancient_ore": "远古合金矿"
+    "block.lifeaftercalamity.ancient_ore": "远古合金矿",
+    "block.lifeaftercalamity.sulphur_ore": "硫磺矿",
+    "item.lifeaftercalamity.sulphur": "硫磺粉",
+    "item.lifeaftercalamity.madidied": "madi1718 的 骨灰盒"
 }

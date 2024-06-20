@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+      "item": "lifeaftercalamity:ancient_ore"
+    },
+    "result": "lifeaftercalamity:ancient_ingot",
+    "experience": 0.7,
+    "cookingtime": 200
+  }

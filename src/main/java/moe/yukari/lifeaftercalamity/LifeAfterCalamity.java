@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.fabricmc.fabric.api.event.server.ServerTickCallback;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -67,6 +68,8 @@ public class LifeAfterCalamity implements ModInitializer {
 	public static final Item ANCIENT_INGOT = new Item(new FabricItemSettings());  //远古合金
 	public static final Item FLAMARINE_FORGING_RECIPE = new Item(new FabricItemSettings());   //烈焰锻造材料
 	public static final Item IRON_COARSE = new Item(new FabricItemSettings());  //粗铁球
+	public static final Item SULPHUR = new Item(new FabricItemSettings());
+	public static final Item MADIDIED = new Item(new FabricItemSettings());
 
 	//碎片系列物品
     public static final Item COBBLESTONE_FRAGMENT = new Item(new FabricItemSettings());  //圆石碎片
@@ -74,7 +77,8 @@ public class LifeAfterCalamity implements ModInitializer {
 	public static final Item IRON_FRAGMENT = new Item(new FabricItemSettings());  //铁矿碎片
 
 	//当然是方块啦
-	public static final Block ANCIENT_ORE = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool());
+	public static final Block ANCIENT_ORE = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool().breakByTool(FabricToolTags.PICKAXES, 2));
+	public static final Block SULPHUR_ORE = new Block(FabricBlockSettings.of(Material.METAL).strength(4.2f).requiresTool().breakByTool(FabricToolTags.PICKAXES, 1));
 
 	//首先我要揍死fabric wiki
 	private static ConfiguredFeature<?, ?> ORE_ANCIENT_OVERWORLD = Feature.ORE
@@ -86,6 +90,14 @@ public class LifeAfterCalamity implements ModInitializer {
 		.spreadHorizontally()
 		.repeat(15);
 	
+	private static ConfiguredFeature<?, ?> ORE_SULPHUR_OVERWORLD = Feature.ORE
+	    .configure(new OreFeatureConfig(
+			OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+			LifeAfterCalamity.SULPHUR_ORE.getDefaultState(),
+		8))
+		.rangeOf(11)
+		.spreadHorizontally()
+		.repeat(5);
 
 	@Override
 	public void onInitialize() {
@@ -104,6 +116,8 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "diamond_fragment"), DIAMOND_FRAGMENT);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "iron_coarse"), IRON_COARSE);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "iron_fragment"), IRON_FRAGMENT);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "sulphur"), SULPHUR);
+        Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "madidied"), MADIDIED);
 
 		//开发者勋章
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_yukari"), DEVELOPER_CERT_YUKARI);
@@ -115,20 +129,18 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(Registry.BLOCK, new Identifier("lifeaftercalamity", "ancient_ore"), ANCIENT_ORE);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "ancient_ore"), new BlockItem(ANCIENT_ORE, new FabricItemSettings()));
 
+		Registry.register(Registry.BLOCK, new Identifier("lifeaftercalamity", "sulphur_ore"), SULPHUR_ORE);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "sulphur_ore"), new BlockItem(SULPHUR_ORE, new FabricItemSettings()));
+
 		//Ores!
-		//下面的代码我也不确定要不要用，反正用了就报错，干脆注释一笔走人
-		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("lifeaftercalamity", "ancient_ore_overworld"), ORE_ANCIENT_ORE);
-		//RegistryKey<ConfiguredFeature<?,?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
-		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, "ancient_ore_overworld");
-		//下面代码会直接导致崩溃
-		//Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("lifeaftercalamity", "ancient_ore_overworld"), ORE_ANCIENT_ORE);
-		//RegistryKey<ConfiguredFeature<?, ?>> ancientOreOverworldKey = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
-		//BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ancientOreOverworldKey);
-		//我改死你
 		RegistryKey<ConfiguredFeature<?, ?>> oreAncientOW = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreAncientOW.getValue(), ORE_ANCIENT_OVERWORLD);
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreAncientOW);
 		
+		RegistryKey<ConfiguredFeature<?, ?>> oreSulphurOW = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "sulphur_ore_overworld"));
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreSulphurOW.getValue(), ORE_SULPHUR_OVERWORLD);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreSulphurOW);
+
 	}
 
     //普通方块物品组
@@ -148,6 +160,8 @@ public class LifeAfterCalamity implements ModInitializer {
 			stacks.add(new ItemStack(LifeAfterCalamity.IRON_COARSE));
 			stacks.add(new ItemStack(LifeAfterCalamity.IRON_FRAGMENT));
 			stacks.add(new ItemStack(LifeAfterCalamity.ANCIENT_ORE));
+			stacks.add(new ItemStack(LifeAfterCalamity.SULPHUR_ORE));
+			stacks.add(new ItemStack(LifeAfterCalamity.SULPHUR));
 		})
 	.build();
 
