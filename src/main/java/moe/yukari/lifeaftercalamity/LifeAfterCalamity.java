@@ -92,8 +92,8 @@ public class LifeAfterCalamity implements ModInitializer {
 	public static final ChunkEaterPickaxe CHUNK_EATER_PICKAXE = new ChunkEaterPickaxe(new ChunkEaterItemMaterial(), 2147483647, -0.8f, new Item.Settings());  //板块斩切者
 	public static final ChunkEaterAxe CHUNK_EATER_AXE = new ChunkEaterAxe(new ChunkEaterItemMaterial(), 2147483647, -0.8f, new Item.Settings());
 	public static final CalamitySword CALAMITY_SWORD = new CalamitySword(new FullCalamityItemMaterial(), 7, -0.8f, new Item.Settings());
-	public static final BrokenCalamitySword BROKEN_CALAMITY_SWORD = new BrokenCalamitySword(new CalamityItemMaterial(), 2, -0.8f, new Item.Settings());
-	public static final FullCalamityPickaxe FULL_CALAMITY_PICKAXE = new FullCalamityPickaxe(new FullCalamityItemMaterial(), 2, -0.8f, new Item.Settings());  //灾厄之镐(完全)
+	public static final BrokenCalamitySword BROKEN_CALAMITY_SWORD = new BrokenCalamitySword(new CalamityItemMaterial(), 6, -0.8f, new Item.Settings());
+	public static final FullCalamityPickaxe FULL_CALAMITY_PICKAXE = new FullCalamityPickaxe(new FullCalamityItemMaterial(), 8, -0.8f, new Item.Settings());  //灾厄之镐(完全)
 	public static final SuperFullCalamitySword SUPER_FULL_CALAMITY_SWORD = new SuperFullCalamitySword(new SuperFullCalamityItemMaterial(), 2147483647, -0.8f, new Item.Settings());
     
 	//碎片系列物品
