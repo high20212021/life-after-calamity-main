@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "minecraft:iron_axe"
+      },
+      {
+        "item": "minecraft:diamond_axe"
+      },
+      {
+        "item": "minecraft:netherite_axe"
+      },
+      {
+        "item": "minecraft:stone_axe"
+      },
+      {
+        "item": "minecraft:nether_star"
+      }
+    ],
+    "result": {
+      "item": "lifeaftercalamity:chunk_eater_axe"
+    }
+  }

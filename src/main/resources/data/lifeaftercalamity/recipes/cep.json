@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "minecraft:iron_pickaxe"
+      },
+      {
+        "item": "minecraft:diamond_pickaxe"
+      },
+      {
+        "item": "minecraft:netherite_pickaxe"
+      },
+      {
+        "item": "minecraft:stone_pickaxe"
+      },
+      {
+        "item": "lifeaftercalamity:full_calamity_pickaxe"
+      },
+      {
+        "item": "minecraft:nether_star"
+      },
+      {
+        "item": "lifeaftercalamity:calamity_pickaxe"
+      }
+    ],
+    "result": {
+      "item": "lifeaftercalamity:chunk_eater_axe"
+    }
+  }

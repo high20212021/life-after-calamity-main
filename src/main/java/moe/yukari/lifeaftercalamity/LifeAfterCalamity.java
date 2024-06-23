@@ -48,6 +48,15 @@ import org.apache.logging.log4j.Logger;
 
 import moe.yukari.lifeaftercalamity.tools.CalamityItemMaterial;
 import moe.yukari.lifeaftercalamity.tools.CalamityPickaxe;
+import moe.yukari.lifeaftercalamity.tools.ChunkEaterAxe;
+import moe.yukari.lifeaftercalamity.tools.ChunkEaterItemMaterial;
+import moe.yukari.lifeaftercalamity.tools.ChunkEaterPickaxe;
+import moe.yukari.lifeaftercalamity.tools.FullCalamityItemMaterial;
+import moe.yukari.lifeaftercalamity.tools.FullCalamityPickaxe;
+import moe.yukari.lifeaftercalamity.tools.SuperFullCalamityItemMaterial;
+import moe.yukari.lifeaftercalamity.tools.weapons.BrokenCalamitySword;
+import moe.yukari.lifeaftercalamity.tools.weapons.CalamitySword;
+import moe.yukari.lifeaftercalamity.tools.weapons.SuperFullCalamitySword;
 
 public class LifeAfterCalamity implements ModInitializer {
 
@@ -74,13 +83,19 @@ public class LifeAfterCalamity implements ModInitializer {
 	public static final Item STONE_PICKAXE_HEAD = new Item(new FabricItemSettings());  //石镐头
 	public static final Item ENDER_CORE = new Item(new FabricItemSettings());  //末影核心
 	public static final Item ENDER_POWER_BATTERY = new Item(new FabricItemSettings());  //末影能量电池
-	public static final CalamityPickaxe CALAMITY_PICKAXE = new CalamityPickaxe(new CalamityItemMaterial(), 3, -0.8f, new Item.Settings());  //灾厄之镐
+	public static final CalamityPickaxe CALAMITY_PICKAXE = new CalamityPickaxe(new CalamityItemMaterial(), 2, -0.8f, new Item.Settings());  //灾厄之镐(破损)
 	public static final Item ANCIENT_INGOT = new Item(new FabricItemSettings());  //远古合金
 	public static final Item FLAMARINE_FORGING_RECIPE = new Item(new FabricItemSettings());   //烈焰锻造材料
 	public static final Item IRON_COARSE = new Item(new FabricItemSettings());  //粗铁球
 	public static final Item SULPHUR = new Item(new FabricItemSettings());
 	public static final Item MADIDIED = new Item(new FabricItemSettings());
-
+	public static final ChunkEaterPickaxe CHUNK_EATER_PICKAXE = new ChunkEaterPickaxe(new ChunkEaterItemMaterial(), 2147483647, -0.8f, new Item.Settings());  //板块斩切者
+	public static final ChunkEaterAxe CHUNK_EATER_AXE = new ChunkEaterAxe(new ChunkEaterItemMaterial(), 2147483647, -0.8f, new Item.Settings());
+	public static final CalamitySword CALAMITY_SWORD = new CalamitySword(new FullCalamityItemMaterial(), 7, -0.8f, new Item.Settings());
+	public static final BrokenCalamitySword BROKEN_CALAMITY_SWORD = new BrokenCalamitySword(new CalamityItemMaterial(), 2, -0.8f, new Item.Settings());
+	public static final FullCalamityPickaxe FULL_CALAMITY_PICKAXE = new FullCalamityPickaxe(new FullCalamityItemMaterial(), 2, -0.8f, new Item.Settings());  //灾厄之镐(完全)
+	public static final SuperFullCalamitySword SUPER_FULL_CALAMITY_SWORD = new SuperFullCalamitySword(new SuperFullCalamityItemMaterial(), 2147483647, -0.8f, new Item.Settings());
+    
 	//碎片系列物品
     public static final Item COBBLESTONE_FRAGMENT = new Item(new FabricItemSettings());  //圆石碎片
 	public static final Item DIAMOND_FRAGMENT = new Item(new FabricItemSettings());  //钻石碎片
@@ -128,6 +143,14 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "iron_fragment"), IRON_FRAGMENT);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "sulphur"), SULPHUR);
         Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "madidied"), MADIDIED);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "chunk_eater_pickaxe"), CHUNK_EATER_PICKAXE);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "chunk_eater_axe"), CHUNK_EATER_AXE);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "full_calamity_pickaxe"), FULL_CALAMITY_PICKAXE);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "broken_calamity_sword"), BROKEN_CALAMITY_SWORD);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "super_full_calamity_sword"), SUPER_FULL_CALAMITY_SWORD);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "calamity_sword"), CALAMITY_SWORD);
+
+		
 
 		//开发者勋章
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_yukari"), DEVELOPER_CERT_YUKARI);
@@ -175,6 +198,12 @@ public class LifeAfterCalamity implements ModInitializer {
 			stacks.add(new ItemStack(LifeAfterCalamity.ANCIENT_ORE));
 			stacks.add(new ItemStack(LifeAfterCalamity.SULPHUR_ORE));
 			stacks.add(new ItemStack(LifeAfterCalamity.SULPHUR));
+			stacks.add(new ItemStack(LifeAfterCalamity.CALAMITY_SWORD));
+			stacks.add(new ItemStack(LifeAfterCalamity.SUPER_FULL_CALAMITY_SWORD));
+			stacks.add(new ItemStack(LifeAfterCalamity.CHUNK_EATER_AXE));
+			stacks.add(new ItemStack(LifeAfterCalamity.CHUNK_EATER_PICKAXE));
+			stacks.add(new ItemStack(LifeAfterCalamity.FULL_CALAMITY_PICKAXE));
+			stacks.add(new ItemStack(LifeAfterCalamity.BROKEN_CALAMITY_SWORD));
 		})
 	.build();
 

@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "FFF",
+      " # ",
+      " S "
+    ],
+    "key": {
+      "#": {
+        "item": "lifeaftercalamity:calamity_pickaxe"
+      },
+      "F": {
+        "item": "lifeaftercalamity:calamity_core"
+      },
+      "S": {
+        "item": "minecraft:diamond"
+      }
+    },
+    "result": {
+      "item": "lifeaftercalamity:full_calamity_pickaxe"
+    }
+  }

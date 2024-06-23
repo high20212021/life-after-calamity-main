@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "A",
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "A": {
+        "item": "lifeaftercalamity:calamity_core"
+      }
+    },
+    "result": {
+      "item": "lifeaftercalamity:broken_calamity_sword"
+    }
+  }

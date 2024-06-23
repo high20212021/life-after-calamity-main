@@ -2,7 +2,7 @@
     "itemGroup.lifeaftercalamity.calamity": "灾厄余生-主线",
     "itemGroup.lifeaftercalamity.developers_calamity": "灾厄余生-开发者物品",
     "item.lifeaftercalamity.calamity_core": "灾厄之核",
-    "item.lifeaftercalamity.calamity_pickaxe": "灾厄之镐",
+    "item.lifeaftercalamity.calamity_pickaxe": "破损的灾厄之镐",
     "item.lifeaftercalamity.stone_pickaxe_head": "石镐头",
     "item.lifeaftercalamity.ender_core": "末影核心",
     "item.lifeaftercalamity.ender_power_battery": "末影能量电池",
@@ -19,5 +19,11 @@
     "block.lifeaftercalamity.ancient_ore": "远古合金矿",
     "block.lifeaftercalamity.sulphur_ore": "硫磺矿",
     "item.lifeaftercalamity.sulphur": "硫磺粉",
-    "item.lifeaftercalamity.madidied": "madi1718 的 骨灰盒"
+    "item.lifeaftercalamity.madidied": "madi1718 的 骨灰盒",
+    "item.lifeaftercalamity.broken_calamity_sword": "灾厄断钢剑",
+    "item.lifeaftercalamity.super_full_calamity_sword": "至尊灾厄剑",
+    "item.lifeaftercalamity.chunk_eater_axe": "自然纯净者",
+    "item.lifeaftercalamity.chunk_eater_pickaxe": "板块斩切者",
+    "item.lifeaftercalamity.calamity_sword": "灾厄之剑",
+    "item.lifeaftercalamity.full_calamity_pickaxe": "完整的灾厄之镐"
 }

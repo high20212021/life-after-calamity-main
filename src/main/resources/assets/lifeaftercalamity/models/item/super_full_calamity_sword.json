@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+            "layer0": "lifeaftercalamity:item/super_full_calamity_sword"
+    }
+}

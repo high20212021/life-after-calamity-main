@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "#",
+      "#",
+      "T"
+    ],
+    "key": {
+      "#": {
+        "item": "lifeaftercalamity:calamity_core"
+      },
+      "T": {
+        "item": "minecraft:iron_sword"
+      }
+    },
+    "result": {
+      "item": "lifeaftercalamity:calamity_sword"
+    }
+  }

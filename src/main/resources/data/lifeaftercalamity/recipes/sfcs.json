@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "minecraft:iron_sword"
+      },
+      {
+        "item": "minecraft:diamond_sword"
+      },
+      {
+        "item": "minecraft:netherite_sword"
+      },
+      {
+        "item": "minecraft:stone_sword"
+      },
+      {
+        "item": "lifeaftercalamity:broken_calamity_sword"
+      },
+      {
+        "item": "minecraft:nether_star"
+      },
+      {
+        "item": "lifeaftercalamity:calamity_sword"
+      }
+    ],
+    "result": {
+      "item": "lifeaftercalamity:super_full_calamity_sword"
+    }
+  }

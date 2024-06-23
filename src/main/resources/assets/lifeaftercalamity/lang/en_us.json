@@ -2,7 +2,7 @@
     "itemGroup.lifeaftercalamity.calamity": "Life After Calamity Mod",
     "itemGroup.lifeaftercalamity.developers_calamity": "Life After Calamity Mod Developers",
     "item.lifeaftercalamity.calamity_core": "Calamity Core",
-    "item.lifeaftercalamity.calamity_pickaxe": "Calamity Pickaxe",
+    "item.lifeaftercalamity.calamity_pickaxe": "Broken Calamity Pickaxe",
     "item.lifeaftercalamity.stone_pickaxe_head": "Stone Pickaxe Head",
     "item.lifeaftercalamity.ender_core": "Ender Core",
     "item.lifeaftercalamity.ender_power_battery": "Ender Power Battery",
@@ -19,5 +19,11 @@
     "block.lifeaftercalamity.ancient_ore": "Ancient Ore",
     "block.lifeaftercalamity.sulphur_ore": "Sulphur Ore",
     "item.lifeaftercalamity.sulphur": "Sulphur Dust",
-    "item.lifeaftercalamity.madidied": "madi你妈死了"
+    "item.lifeaftercalamity.madidied": "madi你妈死了",
+    "item.lifeaftercalamity.broken_calamity_sword": "Broken Calamity Sword",
+    "item.lifeaftercalamity.super_full_calamity_sword": "Supereme Calamity Sword",
+    "item.lifeaftercalamity.chunk_eater_axe": "Chunk Eater Axe",
+    "item.lifeaftercalamity.chunk_eater_pickaxe": "Chunk Eater Pickaxe",
+    "item.lifeaftercalamity.calamity_sword": "Calamity Sword",
+    "item.lifeaftercalamity.full_calamity_pickaxe": "Full Calamity Pickaxe"
 }
