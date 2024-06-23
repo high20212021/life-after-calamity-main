@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.fabricmc.fabric.api.event.server.ServerTickCallback;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -15,6 +16,10 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -31,6 +36,11 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 
 import org.apache.logging.log4j.LogManager;
@@ -141,6 +151,9 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreSulphurOW.getValue(), ORE_SULPHUR_OVERWORLD);
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreSulphurOW);
 
+		//会修的可以在这帮我修一下（
+        //ServerTickEvents.END_SERVER_TICK.register(this::onServerTick);
+
 	}
 
     //普通方块物品组
@@ -177,4 +190,19 @@ public class LifeAfterCalamity implements ModInitializer {
 		})
 	.build();
 
+	/*
+	private void onServerTick(ServerWorld world) {
+		for (ServerPlayerEntity player : world.getPlayers()) {
+			StatusEffectInstance miningFatigue = new StatusEffectInstance(StatusEffects.MINING_FATIGUE, Integer.MAX_VALUE, 0, false, false);
+			player.addStatusEffect(miningFatigue);
+
+			if (player.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() != 12.0) {
+				player.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(12.0);
+				if (player.getHealth() > 12.0f) {
+					player.setHealth(12.0f);
+				}
+			}
+		}
+	}
+	*/
 }
