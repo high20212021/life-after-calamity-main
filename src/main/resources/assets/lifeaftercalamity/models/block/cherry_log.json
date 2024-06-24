@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "lifeaftercalamity:block/cherry_log_top",
+    "side": "lifeaftercalamity:block/cherry_log"
+  }
+}

@@ -25,5 +25,9 @@
     "item.lifeaftercalamity.chunk_eater_axe": "自然纯净者",
     "item.lifeaftercalamity.chunk_eater_pickaxe": "板块斩切者",
     "item.lifeaftercalamity.calamity_sword": "灾厄之剑",
-    "item.lifeaftercalamity.full_calamity_pickaxe": "完整的灾厄之镐"
+    "item.lifeaftercalamity.full_calamity_pickaxe": "完整的灾厄之镐",
+    "block.lifeaftercalamity.cherry_log": "樱花原木",
+    "block.lifeaftercalamity.cherry_planks": "樱花木板",
+    "block.lifeaftercalamity.cherry_leaves": "樱花树叶",
+    "block.lifeaftercalamity.cherry_sapling": "樱花树苗"
 }

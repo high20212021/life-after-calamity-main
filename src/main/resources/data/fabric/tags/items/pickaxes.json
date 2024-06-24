@@ -1,6 +1,8 @@
 {
     "replace": false,
     "values": [
-        "lifeaftercalamity:calamity_pickaxe"
+        "lifeaftercalamity:calamity_pickaxe",
+        "lifeaftercalamity:full_calamity_pickaxe",
+        "lifeaftercalamity:chunk_eater_pickaxe"
     ]
 }

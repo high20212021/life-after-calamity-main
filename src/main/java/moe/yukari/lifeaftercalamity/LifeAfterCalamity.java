@@ -33,6 +33,11 @@ import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.TreeFeatureConfig;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
@@ -105,6 +110,11 @@ public class LifeAfterCalamity implements ModInitializer {
 	public static final Block ANCIENT_ORE = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f).requiresTool().breakByTool(FabricToolTags.PICKAXES, 2));
 	public static final Block SULPHUR_ORE = new Block(FabricBlockSettings.of(Material.METAL).strength(4.2f).requiresTool().breakByTool(FabricToolTags.PICKAXES, 1));
 
+	public static final Block CHERRY_LEAVES = new Block(FabricBlockSettings.of(Material.LEAVES).strength(0.2f).breakByTool(FabricToolTags.SHEARS));
+	public static final Block CHERRY_LOG = new Block(FabricBlockSettings.of(Material.WOOD).strength(2.0f).breakByTool(FabricToolTags.AXES));
+	public static final Block CHERRY_SAPLING = new Block(FabricBlockSettings.of(Material.PLANT).strength(0.1f).breakByHand(true));
+	public static final Block CHERRY_PLANKS = new Block(FabricBlockSettings.of(Material.WOOD).strength(2.2f).breakByTool(FabricToolTags.AXES));
+
 	//首先我要揍死fabric wiki
 	private static ConfiguredFeature<?, ?> ORE_ANCIENT_OVERWORLD = Feature.ORE
 	    .configure(new OreFeatureConfig(
@@ -123,6 +133,9 @@ public class LifeAfterCalamity implements ModInitializer {
 		.rangeOf(11)
 		.spreadHorizontally()
 		.repeat(5);
+
+	//我要种树!
+    //QAQ
 
 	@Override
 	public void onInitialize() {
@@ -150,8 +163,6 @@ public class LifeAfterCalamity implements ModInitializer {
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "super_full_calamity_sword"), SUPER_FULL_CALAMITY_SWORD);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "calamity_sword"), CALAMITY_SWORD);
 
-		
-
 		//开发者勋章
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_yukari"), DEVELOPER_CERT_YUKARI);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "developer_cert_mibino"), DEVELOPER_CERT_MIBINO);
@@ -164,6 +175,18 @@ public class LifeAfterCalamity implements ModInitializer {
 
 		Registry.register(Registry.BLOCK, new Identifier("lifeaftercalamity", "sulphur_ore"), SULPHUR_ORE);
 		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "sulphur_ore"), new BlockItem(SULPHUR_ORE, new FabricItemSettings()));
+
+		Registry.register(Registry.BLOCK, new Identifier("lifeaftercalamity", "cherry_log"), CHERRY_LOG);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "cherry_log"), new BlockItem(CHERRY_LOG, new FabricItemSettings()));
+
+		Registry.register(Registry.BLOCK, new Identifier("lifeaftercalamity", "cherry_leaves"), CHERRY_LEAVES);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "cherry_leaves"), new BlockItem(CHERRY_LEAVES, new FabricItemSettings()));
+
+		Registry.register(Registry.BLOCK, new Identifier("lifeaftercalamity", "cherry_planks"), CHERRY_PLANKS);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "cherry_planks"), new BlockItem(CHERRY_PLANKS, new FabricItemSettings()));
+
+		Registry.register(Registry.BLOCK, new Identifier("lifeaftercalamity", "cherry_sapling"), CHERRY_SAPLING);
+		Registry.register(Registry.ITEM, new Identifier("lifeaftercalamity", "cherry_sapling"), new BlockItem(CHERRY_SAPLING, new FabricItemSettings()));
 
 		//Ores!
 		RegistryKey<ConfiguredFeature<?, ?>> oreAncientOW = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier("lifeaftercalamity", "ancient_ore_overworld"));
@@ -204,6 +227,10 @@ public class LifeAfterCalamity implements ModInitializer {
 			stacks.add(new ItemStack(LifeAfterCalamity.CHUNK_EATER_PICKAXE));
 			stacks.add(new ItemStack(LifeAfterCalamity.FULL_CALAMITY_PICKAXE));
 			stacks.add(new ItemStack(LifeAfterCalamity.BROKEN_CALAMITY_SWORD));
+			stacks.add(new ItemStack(LifeAfterCalamity.CHERRY_LEAVES));
+			stacks.add(new ItemStack(LifeAfterCalamity.CHERRY_LOG));
+			stacks.add(new ItemStack(LifeAfterCalamity.CHERRY_PLANKS));
+			stacks.add(new ItemStack(LifeAfterCalamity.CHERRY_SAPLING));
 		})
 	.build();
 

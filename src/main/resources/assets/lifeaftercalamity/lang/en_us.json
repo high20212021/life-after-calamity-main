@@ -25,5 +25,9 @@
     "item.lifeaftercalamity.chunk_eater_axe": "Chunk Eater Axe",
     "item.lifeaftercalamity.chunk_eater_pickaxe": "Chunk Eater Pickaxe",
     "item.lifeaftercalamity.calamity_sword": "Calamity Sword",
-    "item.lifeaftercalamity.full_calamity_pickaxe": "Full Calamity Pickaxe"
+    "item.lifeaftercalamity.full_calamity_pickaxe": "Full Calamity Pickaxe",
+    "block.lifeaftercalamity.cherry_log": "Cherry Log",
+    "block.lifeaftercalamity.cherry_planks": "Cherry Planks",
+    "block.lifeaftercalamity.cherry_leaves": "Cherry Leaves",
+    "block.lifeaftercalamity.cherry_sapling": "Cherry Sapling"
 }
